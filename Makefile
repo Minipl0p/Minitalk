@@ -9,7 +9,7 @@ BLUE  := \033[0;34m
 NC    := \033[0m
 
 # Names
-NAME_SERVER := serveur
+NAME_SERVER := server
 NAME_CLIENT := client
 CC := cc
 CFLAGS := -Wall -Wextra -Werror -g -Iheader
@@ -27,7 +27,7 @@ all: libs $(NAME_SERVER) $(NAME_CLIENT)
 
 $(NAME_SERVER):
 	@echo "$(BLUE)🔗 Building $@...$(NC)"
-	@$(CC) $(CFLAGS) src/serveur.c -L$(LIBDIR) -l:$(LIBNAME) -o $(NAME_SERVER)
+	@$(CC) $(CFLAGS) src/server.c -L$(LIBDIR) -l:$(LIBNAME) -o $(NAME_SERVER)
 	@echo "$(GREEN)✅ Built $@$(NC)"
 
 $(NAME_CLIENT):
